@@ -11,6 +11,7 @@ android:
     - 'android-sdk-license-.+'
 dotnet: 3.0.100
 script:
+  - brew cask install android-sdk
   - find /usr/local/share/android-sdk
   #- brew update
   #- brew cask install adoptopenjdk/openjdk/adoptopenjdk8
