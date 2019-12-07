@@ -11,10 +11,11 @@ android:
     - 'android-sdk-license-.+'
 dotnet: 3.0.100
 script:
-  - brew update
-  - brew cask install adoptopenjdk/openjdk/adoptopenjdk8
-  - export JAVA_HOME=$(/usr/libexec/java_home -v 1.8)
-  - dotnet tool install --global boots > nul
-  - boots https://aka.ms/xamarin-android-commercial-d16-4-macos
+  - find /usr/local/share/android-sdk
+  #- brew update
+  #- brew cask install adoptopenjdk/openjdk/adoptopenjdk8
+  #- export JAVA_HOME=$(/usr/libexec/java_home -v 1.8)
+  #- dotnet tool install --global boots > nul
+  #- boots https://aka.ms/xamarin-android-commercial-d16-4-macos
   #- msbuild HelloForms.Android/HelloForms.Android.csproj /t:InstallAndroidDependencies /p:AndroidSdkDirectory=../android-sdk /p:AcceptAndroidSDKLicenses=true /v:diag
-  - msbuild /restore HelloForms.Android/HelloForms.Android.csproj /p:Configuration=Release /p:AndroidSdkBuildToolsVersion=29.0.0 /p:AndroidSdkPlatformToolsVersion=29.0.0 /v:diag
+  #- msbuild /restore HelloForms.Android/HelloForms.Android.csproj /p:Configuration=Release /p:AndroidSdkBuildToolsVersion=29.0.0 /p:AndroidSdkPlatformToolsVersion=29.0.0 /v:diag
