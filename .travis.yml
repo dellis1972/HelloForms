@@ -1,18 +1,11 @@
 language: csharp
 os:
-- osx
-android:
-  components:
-    - android-29
-    - build-tools-29.0.0
-    - platform-tools-29.0.0
-  licenses:
-    - 'android-sdk-preview-.+'
-    - 'android-sdk-license-.+'
+- osxgi
 dotnet: 3.0.100
 script:
-  - brew cask install android-sdk
-  - find /usr/local/share/android-sdk
+  - curl -L https://raw.github.com/embarkmobile/android-sdk-installer/version-2/android-sdk-installer
+  - ./android-sdk-installer --dir=./android-sdk --install=build-tools-29.0.0,android-29,platform-tools-29.0.0
+  - find ./android-sdk
   #- brew update
   #- brew cask install adoptopenjdk/openjdk/adoptopenjdk8
   #- export JAVA_HOME=$(/usr/libexec/java_home -v 1.8)
