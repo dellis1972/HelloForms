@@ -1,10 +1,12 @@
 language: csharp
 os:
-- osxgi
+- osx
 dotnet: 3.0.100
 script:
   - curl -L https://raw.github.com/embarkmobile/android-sdk-installer/version-2/android-sdk-installer -o android-sdk-installer
+  - curl -L https://raw.github.com/embarkmobile/android-sdk-installer/version-2/accept-licenses -o accept-licenses
   - chmod u+x android-sdk-installer
+  - chmod u+x accept-licenses
   - ./android-sdk-installer --dir=./android-sdk --install=build-tools-29.0.0,android-29,platform-tools-29.0.0 --accept="android-sdk-license-e6a904e8|android-sdk-license-e6a904e8|android-sdk-license-e6a904e8"
   - brew update
   - brew cask install adoptopenjdk/openjdk/adoptopenjdk8
